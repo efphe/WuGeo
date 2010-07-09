@@ -1,0 +1,41 @@
+__        __      ____
+\ \      / /   _ / ___| ___  ___
+ \ \ /\ / / | | | |  _ / _ \/ _ \
+  \ V  V /| |_| | |_| |  __/ (_) |
+   \_/\_/  \__,_|\____|\___|\___/
+
+
+Hello,
+
+WuGeo is a python module to design world geographical map.
+It's trivially inspired by clustrmaps:
+
+  http://clustrmaps.com
+
+I coded it because clustrmaps (and alternatives) does not offer a
+valid SSL certificate: including their maps on a protected site 
+is problematic.
+
+Anyway, now WuGeo is coded, we have a flexible system to create
+our custom maps!
+
+WuGeo uses the Miller map projection (aka cylindrical projection). 
+You need a compatible world map. 
+
+Install WuGeo as usual:
+
+  # python setup.py install
+
+or use it directly, without system installation.
+
+WuGeo interface is composed by a unique function:
+
+  >>> print wugeo.geo_marker.__doc__
+
+Enjoy!
+
+--
+Yellow, WuBook labs
+https://en.wubook.net
+https://wubook.net
+https://wubook.net/what/labs/
