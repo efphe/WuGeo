@@ -97,7 +97,7 @@ def geo_marker(coords, sfile, dfile, factor= 1, col= 'red', bcol= 'black', base=
     sy= yoff * (1 - sy)
 
     rng= _range(n, factor, base, steps, minpoint)
-    _ellipse(idraw, sx, sy, rng)
+    _ellipse(idraw, sx, sy, rng, col, bcol)
 
   img.save(dfile)
   del img
