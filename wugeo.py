@@ -61,10 +61,15 @@ def geo_marker(coords, sfile, dfile, factor= 1, col= 'red', bcol= 'black', base=
 
   `coords` is a list of tuples:
 
-     [(lat, long, count),... ]
+     [(lat, long, count, <`col`, `bcol`>),... ]
 
   where `lat` is latitude, `long` is longitude and `count` is
   the number of visitors coming from this location.
+  `col` and `bcol` are optional tuple items (so elements of `coords` list
+  can be tuples of different sizes); their meaning is similar to `col` and
+  `bcol` function arguments (see below). If these items are missing from the
+  tuple, the 'global' `col` and `bcol` values (the ones from the function
+  arguments) will be used
 
   `sfile` is the geographic source map file.
   `dfile` is the destination file.
@@ -95,12 +100,20 @@ def geo_marker(coords, sfile, dfile, factor= 1, col= 'red', bcol= 'black', base=
       x = coord[0]
       y = coord[1]
       n = coord[2]
+      try:
+          ccol = coord[3]
+      except IndexError:
+          ccol = col
+      try:
+          cbcol = coord[4]
+      except IndexError:
+          cbcol = bcol
       sx, sy = miller_map(x, y)
       sx = xoff * (sx + 1)
       sy = yoff * (1 - sy)
 
       rng= _range(n, factor, base, steps, minpoint)
-      _ellipse(idraw, sx, sy, rng, col, bcol)
+      _ellipse(idraw, sx, sy, rng, ccol, cbcol)
 
   img.save(dfile)
   del img
