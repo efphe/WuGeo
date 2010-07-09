@@ -24,6 +24,8 @@
 # ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 
+__version__ = '0.1' # increase this when making a new stable release
+
 import math
 import Image
 import ImageDraw
