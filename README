@@ -12,6 +12,10 @@ It's trivially inspired by clustrmaps:
 
   http://clustrmaps.com
 
+and used in production environment on the WuBook suite:
+
+  http://en.wubook.net/, http://wubook.net/
+
 I coded it because clustrmaps (and alternatives) does not offer a
 valid SSL certificate: including their maps on a protected site 
 is problematic.
