@@ -91,13 +91,16 @@ def geo_marker(coords, sfile, dfile, factor= 1, col= 'red', bcol= 'black', base=
   idraw= ImageDraw.Draw(img)
   scoords= []
 
-  for x,y,n in coords:
-    sx, sy= miller_map(x,y)
-    sx= xoff * (sx + 1)
-    sy= yoff * (1 - sy)
+  for coord in coords:
+      x = coord[0]
+      y = coord[1]
+      n = coord[2]
+      sx, sy = miller_map(x, y)
+      sx = xoff * (sx + 1)
+      sy = yoff * (1 - sy)
 
-    rng= _range(n, factor, base, steps, minpoint)
-    _ellipse(idraw, sx, sy, rng, col, bcol)
+      rng= _range(n, factor, base, steps, minpoint)
+      _ellipse(idraw, sx, sy, rng, col, bcol)
 
   img.save(dfile)
   del img
