@@ -56,7 +56,7 @@ def _range(n, f= 1, base= 10, steps= 5, minpoint= 2):
   nlen= int(nlen/f)
   return nlen
 
-def geo_marker(coords, sfile, dfile, factor= 1, col= 'red', bcol= 'black', base= 10, steps= 5, minpoint= 2, mapcols= {}):
+def geo_marker(coords, sfile, dfile, factor= 1, col= 'red', bcol= 'black', base= 10, steps= 5, minpoint= 2):
   """ geo_marker(coords, sfile, dfile [,factor= 1, col= 'red', bcol= 'black', base= 10, steps= 5]) -> None 
 
   `coords` is a list of tuples:
@@ -97,8 +97,7 @@ def geo_marker(coords, sfile, dfile, factor= 1, col= 'red', bcol= 'black', base=
     sy= yoff * (1 - sy)
 
     rng= _range(n, factor, base, steps, minpoint)
-    tcol= mapcols.get((x,y), col)
-    _ellipse(idraw, sx, sy, rng, tcol, bcol)
+    _ellipse(idraw, sx, sy, rng)
 
   img.save(dfile)
   del img
