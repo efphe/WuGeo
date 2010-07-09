@@ -72,6 +72,10 @@ def geo_marker(coords, sfile, dfile, factor= 1, col= 'red', bcol= 'black', base=
   `factor` is a scaling parameter. Tune with it your points dimensions.
 
   You can set your favorite colors with `col` and `bcol`.
+  `col` is the color of the actual point.
+  `bcol` is the border color of the actual point.
+  The default combination col='red', bcol= 'black' draws red circles surrounded
+  by black circumferences.
   
   `base` and `steps` control the points growing. For example, if base is 10
   and steps is 5, point changes their dimensions when `count` becomes 
